@@ -15,15 +15,14 @@ private:
 
 public:
 	Fixed();
-	Fixed(const Fixed &src);
+	~Fixed();
 	Fixed(const float numFloat);
 	Fixed(const int numInt);
-	~Fixed();
+	Fixed(const Fixed &src);
+	float toFloat(void) const;
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
-	float toFloat(void) const;
 	int toInt(void) const;
-
 	Fixed &operator=(const Fixed &src);
 	Fixed &operator+(const Fixed &src);
 	Fixed &operator-(const Fixed &src);

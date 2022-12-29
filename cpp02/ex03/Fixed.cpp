@@ -1,9 +1,7 @@
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : fixed_point(0)
-{
-}
+Fixed::Fixed() : fixed_point(0) {}
 
 Fixed::Fixed(const Fixed &src)
 {
@@ -20,9 +18,7 @@ Fixed::Fixed(const float numFloat)
 	this->fixed_point = (int)roundf(numFloat * (1 << bits));
 }
 
-Fixed::~Fixed()
-{
-}
+Fixed::~Fixed() {}
 
 int Fixed::getRawBits(void) const
 {
@@ -105,31 +101,9 @@ Fixed &Fixed::operator--()
 	return *this;
 }
 
-bool Fixed::operator==(const Fixed &src1) const {
-	return (this->getRawBits() == src1.getRawBits());
-}
-
-bool Fixed::operator<(const Fixed &src1) const {
-	return (this->getRawBits() < src1.getRawBits());
-}
-
-bool Fixed::operator>(const Fixed &src1) const {
-	return (this->getRawBits() > src1.getRawBits());
-}
-
-bool Fixed::operator>=(const Fixed &src1) const {
-	return (this->getRawBits() >= src1.getRawBits());
-}
-
-bool Fixed::operator<=(const Fixed &src1) const {
-	return (this->getRawBits() <= src1.getRawBits());
-}
-bool Fixed::operator!=(const Fixed &src1) const {
-	return (this->getRawBits() != src1.getRawBits());
-}
-
 Fixed &Fixed::min(Fixed &src1, Fixed &src2)
 {
+
 	if (src1.toFloat() < src2.toFloat())
 		return src1;
 	else
@@ -146,6 +120,7 @@ Fixed &Fixed::max(Fixed &src1, Fixed &src2)
 
 const Fixed &Fixed::min(const Fixed &src1, const Fixed &src2)
 {
+
 	if (src1.toFloat() < src2.toFloat())
 		return src1;
 	else
@@ -166,3 +141,31 @@ ostream &operator<<(ostream &out, const Fixed &value)
 	return out;
 }
 
+bool Fixed::operator==(const Fixed &src1) const
+{
+	return (this->getRawBits() == src1.getRawBits());
+}
+
+bool Fixed::operator<(const Fixed &src1) const
+{
+	return (this->getRawBits() < src1.getRawBits());
+}
+
+bool Fixed::operator>(const Fixed &src1) const
+{
+	return (this->getRawBits() > src1.getRawBits());
+}
+
+bool Fixed::operator>=(const Fixed &src1) const
+{
+	return (this->getRawBits() >= src1.getRawBits());
+}
+
+bool Fixed::operator<=(const Fixed &src1) const
+{
+	return (this->getRawBits() <= src1.getRawBits());
+}
+bool Fixed::operator!=(const Fixed &src1) const
+{
+	return (this->getRawBits() != src1.getRawBits());
+}
