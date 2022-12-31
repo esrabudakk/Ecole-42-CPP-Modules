@@ -1,5 +1,6 @@
 {
 	"files.associations": {
+<<<<<<< HEAD
 		"functional": "cpp",
 		"ostream": "cpp",
 		"array": "cpp",
@@ -9,6 +10,31 @@
 		"cctype": "cpp",
 		"clocale": "cpp",
 		"cmath": "cpp",
+=======
+		"__bit_reference": "cpp",
+		"__config": "cpp",
+		"__debug": "cpp",
+		"__errc": "cpp",
+		"__functional_base": "cpp",
+		"__hash_table": "cpp",
+		"__locale": "cpp",
+		"__mutex_base": "cpp",
+		"__node_handle": "cpp",
+		"__nullptr": "cpp",
+		"__split_buffer": "cpp",
+		"__string": "cpp",
+		"__threading_support": "cpp",
+		"__tuple": "cpp",
+		"algorithm": "cpp",
+		"array": "cpp",
+		"atomic": "cpp",
+		"bit": "cpp",
+		"bitset": "cpp",
+		"cctype": "cpp",
+		"chrono": "cpp",
+		"cmath": "cpp",
+		"complex": "cpp",
+>>>>>>> 5add4ad5aeb2950bb861f50797138ff03f774bc1
 		"cstdarg": "cpp",
 		"cstddef": "cpp",
 		"cstdint": "cpp",
@@ -19,6 +45,7 @@
 		"cwchar": "cpp",
 		"cwctype": "cpp",
 		"deque": "cpp",
+<<<<<<< HEAD
 		"unordered_map": "cpp",
 		"vector": "cpp",
 		"exception": "cpp",
@@ -49,4 +76,39 @@
 		"typeinfo": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Disabled"
+=======
+		"exception": "cpp",
+		"fstream": "cpp",
+		"functional": "cpp",
+		"initializer_list": "cpp",
+		"iomanip": "cpp",
+		"ios": "cpp",
+		"iosfwd": "cpp",
+		"iostream": "cpp",
+		"istream": "cpp",
+		"iterator": "cpp",
+		"limits": "cpp",
+		"locale": "cpp",
+		"memory": "cpp",
+		"mutex": "cpp",
+		"new": "cpp",
+		"optional": "cpp",
+		"ostream": "cpp",
+		"ratio": "cpp",
+		"sstream": "cpp",
+		"stack": "cpp",
+		"stdexcept": "cpp",
+		"streambuf": "cpp",
+		"string": "cpp",
+		"string_view": "cpp",
+		"system_error": "cpp",
+		"tuple": "cpp",
+		"type_traits": "cpp",
+		"typeinfo": "cpp",
+		"unordered_map": "cpp",
+		"utility": "cpp",
+		"vector": "cpp",
+		"filesystem": "cpp"
+	}
+>>>>>>> 5add4ad5aeb2950bb861f50797138ff03f774bc1
 }

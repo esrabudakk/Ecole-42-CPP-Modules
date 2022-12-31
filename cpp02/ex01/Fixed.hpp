@@ -5,12 +5,12 @@
 #include <cmath>
 using std::cout;
 using std::endl;
-
+using std::ostream;
 class Fixed
 {
 private:
 	int fixed_point;
-	static const int bits;
+	static const int bits = 8;
 public:
 	Fixed();
 	Fixed(const int numInt);
@@ -24,6 +24,7 @@ public:
 	int toInt( void ) const;
 
 };
+ostream &operator<<(ostream &out, const Fixed &value);
 
 
 #endif

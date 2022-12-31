@@ -10,14 +10,14 @@ class Fixed
 {
 private:
 	int fixed_point;
-	static const int bits;
+	static const int bits = 8;
 public:
 	Fixed();
 	Fixed(const Fixed& src);
 	~Fixed();
-	// Fixed& operator= (const Fixed& src);
+	Fixed& operator= (const Fixed& src);
 	int getRawBits( void ) const;
-	void setRawBits( int const raw );
+	void setRawBits(int const raw);
 };
 
 
