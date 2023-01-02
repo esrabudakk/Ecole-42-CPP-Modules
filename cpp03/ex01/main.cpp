@@ -3,36 +3,36 @@
 
 int main(void)
 {
-	std::cout << "ClapTrap:" << std::endl;
-	
-	ClapTrap	I("IRANZU");
+    ClapTrap	I("Esra");
 
-	std::cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "
-		<< I.getEnergyPoints() << " ENERGY POINTS, and " << I.getAttackDamage()
-		<< " ATTACK DAMAGE" << std::endl;
-	
-	I.attack("IDOYA");
-	I.takeDamage(7);
-	I.beRepaired(4);
-	I.takeDamage(3);
-	I.beRepaired(28);
+    cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "
+         << I.getEnergyPoints() << " ENERGY POINTS and " << I.getAttackDamage()
+         << " ATTACK DAMAGE" << endl;
 
-	std::cout << "ScavTrap:" << std::endl;
-	
-	ScavTrap	A("AMAYA");
+    I.attack("Elif");
+    I.takeDamage(7);
+    I.beRepaired(4);
+    I.takeDamage(1);
+    I.beRepaired(8);
+    I.takeDamage(12);
+    I.takeDamage(2);
 
-	std::cout << A.getName() << " has got " << A.getHitPoints() << " HIT POINTS, "
-		<< A.getEnergyPoints() << " ENERGY POINTS and " << A.getAttackDamage()
-		<< " ATTACK DAMAGE" << std::endl;
+    cout << "*********************************************************************"<< endl;
 
-	A.attack("IDOYA");
-	A.takeDamage(7);
-	A.beRepaired(4);
-	A.takeDamage(3);
-	A.beRepaired(8);
-	A.guardGate();
+    ScavTrap	S("Esra");
 
-	A.attack(I.getName());
-	I.takeDamage(A.getAttackDamage());
-	return (0);
+    cout << S.getName() << " has got " << S.getHitPoints() << " HIT POINTS, "
+         << S.getEnergyPoints() << " ENERGY POINTS and " << S.getAttackDamage()
+         << " ATTACK DAMAGE" << endl;
+
+    S.attack("Elif");
+    S.takeDamage(7);
+    S.beRepaired(4);
+    S.takeDamage(1);
+    S.beRepaired(8);
+    S.takeDamage(12);
+    S.takeDamage(2);
+    S.guardGate();
+
+    return (0);
 }

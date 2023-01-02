@@ -1,26 +1,24 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap():ClapTrap()
 {
-	setHitPoints(100);
-	setAttackDamage(20);
-	setEnergyPoints(50);
+    ClapTrap::setHitPoints(100);
+    ClapTrap::setAttackDamage(20);
+    ClapTrap::setEnergyPoints(50);
 	cout << "ScavTrap default constructor called" << endl;
 }
 
-ScavTrap::ScavTrap(string _name)
+ScavTrap::ScavTrap(string _name): ClapTrap(_name)
 {
-	setHitPoints(100);
-	setAttackDamage(20);
-	setEnergyPoints(50);
-	this->setName(_name);
+	ClapTrap::setHitPoints(100);
+	ClapTrap::setAttackDamage(20);
+	ClapTrap::setEnergyPoints(50);
 	cout << "ScavTrap name constructor called" << endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src)
 {
 	cout << "ScavTrap copy constructor called " << endl;
-	*this = src;
 }
 
 ScavTrap::~ScavTrap()

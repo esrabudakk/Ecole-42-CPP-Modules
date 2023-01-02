@@ -17,11 +17,10 @@ public:
     DiamondTrap(string _name);
     DiamondTrap(const DiamondTrap& src);
     void whoAmI();
+    void attack(const std::string &target);
     string getDName() const;
     DiamondTrap &operator=( const DiamondTrap &src);
 
 };
 
-
-std::ostream &operator<<( std::ostream & o, DiamondTrap const & i );
 #endif

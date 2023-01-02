@@ -1,7 +1,7 @@
 NAME = diamondtrap
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 CC = c++
-CPPFLAGS = -Wall -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 OBJ = $(SRC:.cpp=.o)
 

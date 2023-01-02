@@ -3,54 +3,50 @@
 #include "FragTrap.hpp"
 int main(void)
 {
-	std::cout << "ClapTrap:" << std::endl;
-	
-	ClapTrap	I("IRANZU");
+    ClapTrap	I("Esra");
 
-	std::cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "
-		<< I.getEnergyPoints() << " ENERGY POINTS and " << I.getAttackDamage()
-		<< " ATTACK DAMAGE" << std::endl;
+    cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "
+         << I.getEnergyPoints() << " ENERGY POINTS and " << I.getAttackDamage()
+         << " ATTACK DAMAGE" << endl;
 
-	I.attack("IDOYA");
-	I.takeDamage(7);
-	I.beRepaired(4);
-	I.takeDamage(3);
-	I.beRepaired(28);
+    I.attack("Elif");
+    I.takeDamage(7);
+    I.beRepaired(4);
+    I.takeDamage(1);
+    I.beRepaired(8);
+    I.takeDamage(12);
+    I.takeDamage(2);
 
-	std::cout << "ScavTrap:" << std::endl;
-	
-	ScavTrap	A("AMAYA");
+    cout << "*********************************************************************"<< endl;
 
-	std::cout << A.getName() << " has got " << A.getHitPoints() << " HIT POINTS, "
-		<< A.getEnergyPoints() << " ENERGY POINTS and " << A.getAttackDamage()
-		<< " ATTACK DAMAGE" << std::endl;
+    ScavTrap	S("Esra");
+    cout << S.getName() << " has got " << S.getHitPoints() << " HIT POINTS, "
+         << S.getEnergyPoints() << " ENERGY POINTS and " << S.getAttackDamage()
+         << " ATTACK DAMAGE" << endl;
 
-	A.attack("IDOYA");
-	A.takeDamage(7);
-	A.beRepaired(4);
-	A.takeDamage(3);
-	A.beRepaired(8);
-	A.guardGate();
+    S.attack("Elif");
+    S.takeDamage(7);
+    S.beRepaired(4);
+    S.takeDamage(1);
+    S.beRepaired(8);
+    S.takeDamage(12);
+    S.takeDamage(2);
+    S.guardGate();
+    cout << "*********************************************************************"<< endl;
 
-	A.attack(I.getName());
-	I.takeDamage(A.getAttackDamage());
+    FragTrap	F("Esra");
+    cout << F.getName() << " has got " << F.getHitPoints() << " HIT POINTS, "
+         << F.getEnergyPoints() << " ENERGY POINTS and " << F.getAttackDamage()
+         << " ATTACK DAMAGE" << endl;
 
-	std::cout << "FragTrap:" << std::endl;
-	
-	FragTrap	M("MAITE");
+    F.attack("Elif");
+    F.takeDamage(7);
+    F.beRepaired(4);
+    F.takeDamage(1);
+    F.beRepaired(8);
+    F.takeDamage(12);
+    F.takeDamage(2);
+    F.highFivesGuys();
 
-	std::cout << M.getName() << " has got " << M.getHitPoints() << " HIT POINTS, "
-		<< M.getEnergyPoints() << " ENERGY POINTS and " << M.getAttackDamage()
-		<< " ATTACK DAMAGE" << std::endl;
-
-	M.attack("IDOYA");
-	M.takeDamage(7);
-	M.beRepaired(4);
-	M.takeDamage(3);
-	M.beRepaired(8);
-	M.highFivesGuys();
-
-	M.attack(A.getName());
-	A.takeDamage(M.getAttackDamage());
-	return (0);
+    return (0);
 }

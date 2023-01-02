@@ -9,9 +9,9 @@ using std::string;
 
 class ClapTrap
 {
-private:
+protected:
     string name;
-   unsigned int hitPoints;
+    unsigned int hitPoints;
     int energyPoints;
     int attackDamage;
 public:

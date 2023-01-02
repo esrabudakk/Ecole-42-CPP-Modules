@@ -1,22 +1,22 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap():name("default"), hitPoints(10), energyPoints(10), attackDamage(0){
-    cout << "Default constructor called" << endl;
+    cout << "ClapTrap default constructor called" << endl;
 }
 
 ClapTrap::ClapTrap(const string _name):name(_name + "clap_name") ,hitPoints(10), energyPoints(10), attackDamage(0){
-
+    cout << "ClapTrap name constructor called" << endl;
 }
 ClapTrap::~ClapTrap(){
-    cout << "Destructor called "<< endl;
+    cout << "ClapTrap destructor called "<< endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& src){
-    cout << "Copy contructor called" << endl;
+    cout << "ClapTrap copy constructor called" << endl;
     *this = src;
 }
 ClapTrap &ClapTrap::operator=(const ClapTrap& src ){
-    cout << "Copy assignment consturctor callled" << endl;
+    cout << "ClapTrap copy assignment constructor called" << endl;
     this->attackDamage = src.attackDamage;
     this->energyPoints = src.energyPoints;
     this->hitPoints = src.hitPoints;
@@ -58,35 +58,38 @@ int ClapTrap::getAttackDamage() const
 }
 
 void ClapTrap::attack(const std::string& target){
-    if(energyPoints >= 1)
+    if(energyPoints > 0 && hitPoints > 0 )
     {
         cout<< "ClapTrap " << getName() << " attacks " << target << ", causing " << attackDamage << " points of damage!" << endl;
         setEnergyPoints(energyPoints - 1);
     }
+    else
+        cout << name << "could not anything." << endl;
 }
 void ClapTrap::takeDamage(unsigned int amount){
     if(hitPoints > 0)
     {
-        if(amount > hitPoints)
+        if(amount >= hitPoints)
         {
-            cout << "shut down" << endl ;
+            cout << amount << " damage was received. " << name << " couldn't stand.(Shut down. Welldone!)" << endl ;
             setHitPoints(0);
         }
         else
         {
-            attackDamage += amount;
-            hitPoints -= amount;
-            cout << getName() << " has hitPoints " << hitPoints << " amount" << endl;
+            setHitPoints(hitPoints - amount);
+            cout <<amount << " damage was received. " << name << " has been damaged and now it has " << hitPoints << " health." << endl;
         }
     }
     else
-        cout << getName() << " died" << endl;
+        cout << name << " is died" << endl;
 }
 void ClapTrap::beRepaired(unsigned int amount){
-    if(energyPoints >= 1)
+    if(energyPoints > 0 && hitPoints > 0 )
     {
-        cout<< "ClapTrap " << name<< " repairs yourself " << endl;
         setHitPoints(hitPoints + amount);
+        cout<<amount << " health was received. " << name << " has been repaired and now it has " << hitPoints  << " health." << endl;
         setEnergyPoints(energyPoints - 1);
     }
+    else
+        cout << name << " could not anything is died" << endl;
 }

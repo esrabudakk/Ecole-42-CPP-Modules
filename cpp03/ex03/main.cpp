@@ -4,65 +4,62 @@
 #include "DiamondTrap.hpp"
 int main(void)
 {
-	std::cout << "ClapTrap:" << std::endl;
+        ClapTrap	I("Esra");
+
+        cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "
+             << I.getEnergyPoints() << " ENERGY POINTS and " << I.getAttackDamage()
+             << " ATTACK DAMAGE" << endl;
+
+        I.attack("Elif");
+        I.takeDamage(7);
+        I.beRepaired(4);
+        I.takeDamage(1);
+        I.beRepaired(8);
+        I.takeDamage(12);
+        I.takeDamage(2);
+
+        cout << "*********************************************************************"<< endl;
+
+        ScavTrap	S("Esra");
+        cout << S.getName() << " has got " << S.getHitPoints() << " HIT POINTS, "
+             << S.getEnergyPoints() << " ENERGY POINTS and " << S.getAttackDamage()
+             << " ATTACK DAMAGE" << endl;
+
+        S.attack("Elif");
+        S.takeDamage(7);
+        S.beRepaired(4);
+        S.takeDamage(1);
+        S.beRepaired(8);
+        S.takeDamage(12);
+        S.takeDamage(2);
+        S.guardGate();
+        cout << "*********************************************************************"<< endl;
+
+        FragTrap	F("Esra");
+        cout << F.getName() << " has got " << F.getHitPoints() << " HIT POINTS, "
+             << F.getEnergyPoints() << " ENERGY POINTS and " << F.getAttackDamage()
+             << " ATTACK DAMAGE" << endl;
+
+        F.attack("Elif");
+        F.takeDamage(7);
+        F.beRepaired(4);
+        F.takeDamage(1);
+        F.beRepaired(8);
+        F.takeDamage(12);
+        F.takeDamage(2);
+        F.highFivesGuys();
+
+    cout << "*********************************************************************"<< endl;
+
+    std::cout << "DiamondTrap:" << std::endl;
 	
-	ClapTrap	I("IRANZU");
-
-	std::cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "
-		<< I.getEnergyPoints() << " ENERGY POINTS and " << I.getAttackDamage()
-		<< " ATTACK DAMAGE" << std::endl;
-
-	I.attack("IDOYA");
-	I.takeDamage(7);
-	I.beRepaired(4);
-	I.takeDamage(3);
-	I.beRepaired(28);
-
-	std::cout << "ScavTrap:" << std::endl;
-	
-	ScavTrap	A("AMAYA");
-
-	std::cout << A.getName() << " has got " << A.getHitPoints() << " HIT POINTS, "
-		<< A.getEnergyPoints() << " ENERGY POINTS and " << A.getAttackDamage()
-		<< " ATTACK DAMAGE" << std::endl;
-
-	A.attack("IDOYA");
-	A.takeDamage(7);
-	A.beRepaired(4);
-	A.takeDamage(3);
-	A.beRepaired(8);
-	A.guardGate();
-
-	A.attack(I.getName());
-	I.takeDamage(A.getAttackDamage());
-
-	std::cout << "FragTrap:" << std::endl;
-	
-	FragTrap	M("MAITE");
-
-	std::cout << M.getName() << " has got " << M.getHitPoints() << " HIT POINTS, "
-		<< M.getEnergyPoints() << " ENERGY POINTS and " << M.getAttackDamage()
-		<< " ATTACK DAMAGE" << std::endl;
-
-	M.attack("IDOYA");
-	M.takeDamage(7);
-	M.beRepaired(4);
-	M.takeDamage(3);
-	M.beRepaired(8);
-	M.highFivesGuys();
-
-	M.attack(A.getName());
-	A.takeDamage(M.getAttackDamage());
-
-	std::cout << "DiamondTrap:" << std::endl;
-	
-	DiamondTrap	C("CARLOS");
+	DiamondTrap	C("Esra");
 
 	std::cout << C.getName() << " has got " << C.getHitPoints() << " HIT POINTS, "
 		<< C.getEnergyPoints() << " ENERGY POINTS and " << C.getAttackDamage()
 		<< " ATTACK DAMAGE" << std::endl;
 
-	C.attack("IDOYA");
+	C.attack("Elif");
 	C.takeDamage(6);
 	C.beRepaired(4);
 	C.takeDamage(3);
@@ -71,9 +68,6 @@ int main(void)
 	C.whoAmI();
 	C.beRepaired(8);
 	C.takeDamage(17);
-
-	C.attack(M.getName());
-	M.takeDamage(C.getAttackDamage());
 
 	return (0);
 }
