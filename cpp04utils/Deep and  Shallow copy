@@ -1,0 +1,54 @@
+C++'da derin kopya, yeni bir bellek adresiyle yeni bir nesne oluşturan ve orijinal nesnenin verilerini yeni nesneye kopyalayan bir nesnenin kopyasıdır. Derin kopya, orijinal nesnenin verilerini ve yapısını korur ve kopyada yapılan herhangi bir değişiklik orijinal nesneyi etkilemez.
+
+Öte yandan, sığ bir kopya, yeni bir bellek adresiyle yeni bir nesne oluşturan bir nesnenin kopyasıdır, ancak orijinal nesnenin verileri yeni nesneye kopyalanmaz. Bunun yerine, yeni nesne orijinal nesnenin verilerine işaret eder, bu nedenle kopyada yapılan herhangi bir değişiklik orijinal nesneyi etkiler.
+
+C++'da derin bir kopya oluşturmak için, yeni bir nesne oluşturmak ve verileri orijinal nesneden yeni nesneye kopyalamak için kopya oluşturucuyu veya atama işlecini (operatör=) kullanabilirsiniz.
+
+Örneğin:
+
+
+class MyClass {
+ public:
+  MyClass(const MyClass& other) {
+    // copy constructor - create a deep copy of "other"
+    // ...
+  }
+  MyClass& operator=(const MyClass& other) {
+    // assignment operator - create a deep copy of "other"
+    // ...
+    return *this;
+  }
+};
+C++'da sığ bir kopya oluşturmak için, basitçe yeni bir nesne oluşturabilir ve orijinal nesnenin bellek adresini yeni nesneye kopyalayabilirsiniz. Bu, bir kopya oluşturucu veya atama operatörü kullanılarak da yapılabilir.
+
+Örneğin:
+
+
+
+
+#include <iostream>
+#include <string>
+
+class MyClass {
+ public:
+  MyClass(const std::string& str) : str_(str) {}
+
+  // copy constructor - create a shallow copy of "other"
+  MyClass(const MyClass& other) : str_(other.str_) {}
+
+  void print() const { std::cout << str_ << std::endl; }
+
+ private:
+  std::string str_;
+};
+
+int main() {
+  MyClass obj1("Hello");
+  MyClass obj2(obj1);  // create a shallow copy of obj1
+
+  obj1.print();  // prints "Hello"
+  obj2.print();  // prints "Hello"
+
+  return 0;
+}
+
