@@ -1,0 +1,118 @@
+cmake_minimum_required(VERSION 3.23)
+project(Ecole_42_CPP_Modules)
+
+set(CMAKE_CXX_STANDARD 14)
+
+include_directories(cpp00/ex01)
+include_directories(cpp01/ex00)
+include_directories(cpp01/ex01)
+include_directories(cpp01/ex03)
+include_directories(cpp01/ex05)
+include_directories(cpp01/ex06)
+include_directories(cpp02/ex00)
+include_directories(cpp02/ex01)
+include_directories(cpp02/ex02)
+include_directories(cpp02/ex03)
+include_directories(cpp03/ex00)
+include_directories(cpp03/ex01)
+include_directories(cpp03/ex02)
+include_directories(cpp03/ex03)
+include_directories(cpp04/ex00)
+include_directories(cpp04/ex01)
+
+add_executable(Ecole_42_CPP_Modules
+        cpp00/ex00/Megaphone.cpp
+        cpp00/ex01/Contact.cpp
+        cpp00/ex01/contact.hpp
+        cpp00/ex01/Main.cpp
+        cpp00/ex01/PhoneBook.cpp
+        cpp00/ex01/phonebook.hpp
+        cpp01/ex00/main.cpp
+        cpp01/ex00/newZombie.cpp
+        cpp01/ex00/randomChump.cpp
+        cpp01/ex00/Zombie.cpp
+        cpp01/ex00/Zombie.hpp
+        cpp01/ex01/main.cpp
+        cpp01/ex01/Zombie.cpp
+        cpp01/ex01/Zombie.hpp
+        cpp01/ex01/zombieHorde.cpp
+        cpp01/ex02/main.cpp
+        cpp01/ex03/HumanA.cpp
+        cpp01/ex03/HumanA.hpp
+        cpp01/ex03/HumanB.cpp
+        cpp01/ex03/HumanB.hpp
+        cpp01/ex03/main.cpp
+        cpp01/ex03/Weapon.cpp
+        cpp01/ex03/Weapon.hpp
+        cpp01/ex04/main.cpp
+        cpp01/ex05/Harl.cpp
+        cpp01/ex05/Harl.hpp
+        cpp01/ex05/main.cpp
+        cpp01/ex06/Harl.cpp
+        cpp01/ex06/Harl.hpp
+        cpp01/ex06/main.cpp
+        cpp02/ex00/Fixed.cpp
+        cpp02/ex00/Fixed.hpp
+        cpp02/ex00/main.cpp
+        cpp02/ex01/Fixed.cpp
+        cpp02/ex01/Fixed.hpp
+        cpp02/ex01/main.cpp
+        cpp02/ex02/Fixed.cpp
+        cpp02/ex02/Fixed.hpp
+        cpp02/ex02/main.cpp
+        cpp02/ex03/bsp.cpp
+        cpp02/ex03/Fixed.cpp
+        cpp02/ex03/Fixed.hpp
+        cpp02/ex03/main.cpp
+        cpp02/ex03/Point.cpp
+        cpp02/ex03/Point.hpp
+        cpp03/ex00/ClapTrap.cpp
+        cpp03/ex00/ClapTrap.hpp
+        cpp03/ex00/main.cpp
+        cpp03/ex01/ClapTrap.cpp
+        cpp03/ex01/ClapTrap.hpp
+        cpp03/ex01/main.cpp
+        cpp03/ex01/ScavTrap.cpp
+        cpp03/ex01/ScavTrap.hpp
+        cpp03/ex02/ClapTrap.cpp
+        cpp03/ex02/ClapTrap.hpp
+        cpp03/ex02/FragTrap.cpp
+        cpp03/ex02/FragTrap.hpp
+        cpp03/ex02/main.cpp
+        cpp03/ex02/ScavTrap.cpp
+        cpp03/ex02/ScavTrap.hpp
+        cpp03/ex03/ClapTrap.cpp
+        cpp03/ex03/ClapTrap.hpp
+        cpp03/ex03/DiamondTrap.cpp
+        cpp03/ex03/DiamondTrap.hpp
+        cpp03/ex03/FragTrap.cpp
+        cpp03/ex03/FragTrap.hpp
+        cpp03/ex03/main.cpp
+        cpp03/ex03/ScavTrap.cpp
+        cpp03/ex03/ScavTrap.hpp
+        cpp04/ex00/Animal.cpp
+        cpp04/ex00/Animal.hpp
+        cpp04/ex00/Cat.cpp
+        cpp04/ex00/Cat.hpp
+        cpp04/ex00/Dog.cpp
+        cpp04/ex00/Dog.hpp
+        cpp04/ex00/main.cpp
+        cpp04/ex00/WrongAnimal.cpp
+        cpp04/ex00/WrongAnimal.hpp
+        cpp04/ex00/WrongCat.cpp
+        cpp04/ex00/WrongCat.hpp
+        cpp04/ex01/Animal.cpp
+        cpp04/ex01/Animal.hpp
+        cpp04/ex01/Brain.cpp
+        cpp04/ex01/Brain.hpp
+        cpp04/ex01/Cat.cpp
+        cpp04/ex01/Cat.hpp
+        cpp04/ex01/Dog.cpp
+        cpp04/ex01/Dog.hpp
+        cpp04/ex01/main.cpp
+        cpp04/ex01/WrongAnimal.cpp
+        cpp04/ex01/WrongAnimal.hpp
+        cpp04/ex01/WrongCat.cpp
+        cpp04/ex01/WrongCat.hpp
+        deneme/deneme.cpp
+        deneme/deneme2.cpp)

@@ -11,12 +11,11 @@ WrongCat::~WrongCat()
 
 WrongCat::WrongCat(string type): WrongAnimal(type)
 {
-	 std::cout << "WrongCat (\"" << type << "\") constructor called" << std::endl;
+	 std::cout << "WrongCat " << type << " constructor called" << std::endl;
 }
 WrongCat::WrongCat(const WrongCat& src): WrongAnimal(src)
 {
 	cout << "WrongCat copy constructor called "<< endl;
-	*this = src;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat& src)

@@ -16,6 +16,7 @@ Dog::Dog(string type): Animal(type)
 }
 Dog::Dog(const Dog& src): Animal(src)
 {
+    brain = new Brain();
 	cout << "Dog copy constructor called "<< endl;
 	*this = src;
 }
@@ -23,21 +24,11 @@ Dog::Dog(const Dog& src): Animal(src)
 Dog &Dog::operator=(const Dog& src)
 {
 	cout << "Dog copy assignment called "<< endl;
-	*this =src;
+	Animal::operator=(src);
 	return *this;
 }
 void Dog::makeSound() const
 {
 	cout << "Dog is barking" << endl;
-
-}
-void Dog::setIdea(int index, string message)
-{
-	this->brain->ideas[index] = message;
-}
-
-string Dog::getIdea(int index)
-{
-	return this->brain->ideas[index];
 
 }

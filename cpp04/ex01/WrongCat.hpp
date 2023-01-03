@@ -8,7 +8,7 @@ public:
 	WrongCat();
 	~WrongCat();
 	WrongCat(const WrongCat &src);
-	WrongCat(string type);
+	WrongCat(string _type);
 	WrongCat &operator=(const WrongCat &src);
 	void makeSound() const;
 };

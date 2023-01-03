@@ -9,9 +9,9 @@ Animal::~Animal()
 {
 	cout << "Animal destructor  called " << endl;
 }
-Animal::Animal(string name)
+Animal::Animal(string _type)
 {
-	this->type = name;
+	this->type = _type;
 }
 
 Animal::Animal(const Animal &src)
@@ -23,7 +23,7 @@ Animal::Animal(const Animal &src)
 Animal &Animal::operator=(const Animal &src)
 {
 	cout << "Animal copy assignment called " << endl;
-	*this = src;
+	this->type = src.type;
 	return *this;
 }
  void Animal::makeSound()const{

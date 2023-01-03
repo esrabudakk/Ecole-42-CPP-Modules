@@ -1,25 +1,29 @@
 #include "Cat.hpp"
-Cat::Cat(): Animal("Cat")
+Cat::Cat()
 {
-	cout << "Cat default constructor called "<< endl;
-	this->brain = new Brain();
+    this->type = "Cat";
+    this->brain = new Brain();
+    cout << "Cat default constructor called "<< endl;
 }
 
 Cat::~Cat()
 {
+	delete brain;
 	cout << "Cat destructor called "<< endl;
-	delete this->brain;
 }
 
-Cat::Cat(string type): Animal(type)
+Cat::Cat(string _type)
 {
-	 std::cout << "Cat (\"" << type << "\") constructor called" << std::endl;
+    this->type = _type;
 	 this->brain = new Brain();
+	 std::cout << "Cat " << type << " constructor called" << std::endl;
 }
-Cat::Cat(const Cat& src): Animal(src)
+
+Cat::Cat(const Cat& src)
 {
+    this->type = src.type;
+    this->brain = new Brain(*src.brain);
 	cout << "Cat copy constructor called "<< endl;
-	*this = src;
 }
 
 Cat &Cat::operator=(const Cat& src)
@@ -34,12 +38,3 @@ void Cat::makeSound() const
 	cout << "Cat is meowing" << endl; 
 }
 
-void Cat::setIdea(int index, string message)
-{
-	this->brain->ideas[index] = message;
-}
-
-string Cat::getIdea(int index)
-{
-	return this->brain->ideas[index];
-}

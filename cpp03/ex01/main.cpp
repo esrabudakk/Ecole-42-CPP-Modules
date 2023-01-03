@@ -3,6 +3,13 @@
 
 int main(void)
 {
+
+    ClapTrap a(ClapTrap("Ahmet"));
+    ClapTrap b;
+
+    b = a;
+
+
     ClapTrap	I("Esra");
 
     cout << I.getName() << " has got " << I.getHitPoints() << " HIT POINTS, "

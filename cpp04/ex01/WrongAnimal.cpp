@@ -23,7 +23,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal &src)
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &src)
 {
 	cout << "WrongAnimal copy assignment called " << endl;
-	*this = src;
+    this->type = src.type;
 	return *this;
 }
 void WrongAnimal::makeSound() const

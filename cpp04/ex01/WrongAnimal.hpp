@@ -7,7 +7,7 @@ using std::string;
 
 class WrongAnimal
 {
-	protected:
+protected:
 	std::string type;
 private:
 public:
@@ -18,7 +18,6 @@ public:
 	WrongAnimal &operator=(const WrongAnimal &src);
 	void makeSound() const;
 	string getType() const;
-
 };
 
 #endif

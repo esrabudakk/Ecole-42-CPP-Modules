@@ -16,7 +16,7 @@ public:
 	WrongAnimal(const WrongAnimal &src);
 	WrongAnimal(string type);
 	WrongAnimal &operator=(const WrongAnimal &src);
-	void makeSound() const;
+	void makeSound()const;
 	string getType() const;
 
 };

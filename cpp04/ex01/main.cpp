@@ -2,43 +2,37 @@
 #include "Dog.hpp"
 #include "WrongCat.hpp"
 
-#include "stdlib.h"
-#include <stdio.h>
+
+void ff()
+{
+    const Animal *a[10];
+    for (int i = 0; i <10 ; ++i) {
+        if(i <= 5)
+            a[i] = new Cat();
+        else
+            a[i] = new Dog();
+    }
+
+    for (int i = 0; i < 10; ++i) {
+        a[i]->makeSound();
+    }
+    for (int i = 0; i < 10; ++i) {
+        delete a[i];
+    }
+
+
+
+}
+
 int main(void)
 {
-	int nb_animals = 2;
-	Animal *zoo[nb_animals];
-
-	// SUBJECT
-	for (int i = 0; i < nb_animals; i++)
-	{
-		if (i % 2)
-			zoo[i] = new Cat();
-		else
-			zoo[i] = new Dog();
-		std::cout << std::endl;
-	}
-	for (int i = 0; i < nb_animals; i++)
-	{
-		delete zoo[i];
-		std::cout << std::endl;
-	}
-	std::cout << std::endl;
-
-	// DEEP COPY
-	Cat cat;
-	Cat copy;
-
-	cat.setIdea(1, "bonsoir");
-	copy = cat;
-	std::cout << "Original: " << cat.getIdea(1) << std::endl;
-	std::cout << "Copy: " << copy.getIdea(1) << std::endl;
-	copy.setIdea(1, "salut !");
-	std::cout << "Original: " << cat.getIdea(1) << std::endl;
-	std::cout << "Copy: " << copy.getIdea(1) << std::endl << std::endl;
-	Animal *new_cat = new Cat();
-	new_cat->makeSound();
-	std::cout << std::endl;
-	delete new_cat;
-	return 0;
+//    ff();
+    Animal *a = new Cat;
+    {
+//		Dog tmp = basic;
+        Animal *b = a;
+        (void) b;
+    }
+    delete a;
+   // system("leaks brain");
 }

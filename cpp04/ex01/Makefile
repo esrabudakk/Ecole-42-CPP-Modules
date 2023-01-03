@@ -1,7 +1,7 @@
 NAME = brain
 SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
 CC = c++
-CPPFLAGS = -Wall -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 OBJ = $(SRC:.cpp=.o)
 

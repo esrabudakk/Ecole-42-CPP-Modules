@@ -10,18 +10,17 @@ Dog::~Dog()
 }
 Dog::Dog(string type): Animal(type)
 {
-	 std::cout << "Dog (\"" << type << "\") constructor called" << std::endl;
+	 std::cout << "Dog " << type << " constructor called" << std::endl;
 }
 Dog::Dog(const Dog& src): Animal(src)
 {
 	cout << "Dog copy constructor called "<< endl;
-	*this = src;
 }
 
 Dog &Dog::operator=(const Dog& src)
 {
+    (void ) src;
 	cout << "Dog copy assignment called "<< endl;
-	*this =src;
 	return *this;
 }
 void Dog::makeSound() const
