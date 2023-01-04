@@ -30,20 +30,10 @@ void Harl::complain(string level)
 	{
 	case 0:
 		(this->*(pf[0]))();
-		(this->*(pf[1]))();
-		(this->*(pf[2]))();
-		(this->*(pf[3]))();
-		break;
 	case 1:
 		(this->*(pf[1]))();
-		(this->*(pf[2]))();
-		(this->*(pf[3]))();
-		break;
 	case 2:
 		(this->*(pf[2]))();
-		(this->*(pf[3]))();
-
-		break;
 	case 3:
 		(this->*(pf[3]))();
 		break;
