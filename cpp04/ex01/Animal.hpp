@@ -10,12 +10,11 @@ class Animal
 {
 protected:
 	std::string type;
-
 private:
 public:
 	Animal();
-	virtual ~Animal();
-	Animal(string name);
+    virtual ~Animal();
+	Animal(string _type);
 	Animal(const Animal &src);
 	Animal &operator=(const Animal &src);
 	virtual void makeSound() const;

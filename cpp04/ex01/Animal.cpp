@@ -26,7 +26,7 @@ Animal &Animal::operator=(const Animal &src)
 	this->type = src.type;
 	return *this;
 }
- void Animal::makeSound()const{
+ void Animal::makeSound() const{
 	cout << "Animals make sound" << endl;
 }
 

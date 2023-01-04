@@ -1,34 +1,37 @@
-#include"Dog.hpp"
-Dog::Dog(): Animal("Dog")
+#include "Dog.hpp"
+Dog::Dog()
 {
-	cout << "Dog default constructor called "<< endl;
+	cout << "Dog default constructor called " << endl;
+	this->type = "Dog";
 	this->brain = new Brain();
 }
 
 Dog::~Dog()
 {
-	cout << "Dog destructor called "<< endl;
 	delete this->brain;
+	cout << "Dog destructor called " << endl;
 }
-Dog::Dog(string type): Animal(type)
+Dog::Dog(string _type)
 {
-	 std::cout << "Dog (\"" << type << "\") constructor called" << std::endl;
+	this->type = _type;
+	this->brain = new Brain();
+	cout << "Dog " << type << " constructor called" << endl;
 }
-Dog::Dog(const Dog& src): Animal(src)
+Dog::Dog(const Dog &src)
 {
-    brain = new Brain();
-	cout << "Dog copy constructor called "<< endl;
-	*this = src;
+	cout << "Dog copy constructor called " << endl;
+	this->type = src.type;
+	this->brain = new Brain(*src.brain);
 }
 
-Dog &Dog::operator=(const Dog& src)
+Dog &Dog::operator=(const Dog &src)
 {
-	cout << "Dog copy assignment called "<< endl;
-	Animal::operator=(src);
+	cout << "Dog copy assignment called " << endl;
+	this->type = src.type;
+	this->brain = new Brain(*src.brain);
 	return *this;
 }
 void Dog::makeSound() const
 {
 	cout << "Dog is barking" << endl;
-
 }

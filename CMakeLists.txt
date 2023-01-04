@@ -110,9 +110,5 @@ add_executable(Ecole_42_CPP_Modules
         cpp04/ex01/Dog.cpp
         cpp04/ex01/Dog.hpp
         cpp04/ex01/main.cpp
-        cpp04/ex01/WrongAnimal.cpp
-        cpp04/ex01/WrongAnimal.hpp
-        cpp04/ex01/WrongCat.cpp
-        cpp04/ex01/WrongCat.hpp
         deneme/deneme.cpp
         deneme/deneme2.cpp)

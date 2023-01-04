@@ -9,9 +9,9 @@ Animal::~Animal()
 {
 	cout << "Animal destructor  called " << endl;
 }
-Animal::Animal(string name)
+Animal::Animal(string _type)
 {
-	this->type = name;
+	this->type = _type;
 }
 
 Animal::Animal(const Animal &src)
@@ -31,3 +31,4 @@ string Animal::getType() const
 {
 	return type;
 }
+

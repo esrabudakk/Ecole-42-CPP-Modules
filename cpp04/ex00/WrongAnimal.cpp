@@ -9,9 +9,9 @@ WrongAnimal::~WrongAnimal()
 {
 	cout << "WrongAnimal destructor  called " << endl;
 }
-WrongAnimal::WrongAnimal(string name)
+WrongAnimal::WrongAnimal(string _type)
 {
-	this->type = name;
+	this->type = _type;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &src)

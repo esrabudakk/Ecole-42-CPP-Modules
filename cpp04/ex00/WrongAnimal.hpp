@@ -14,7 +14,7 @@ public:
 	WrongAnimal();
 	~WrongAnimal();
 	WrongAnimal(const WrongAnimal &src);
-	WrongAnimal(string type);
+	WrongAnimal(string _type);
 	WrongAnimal &operator=(const WrongAnimal &src);
 	void makeSound()const;
 	string getType() const;

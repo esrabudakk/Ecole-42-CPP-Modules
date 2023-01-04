@@ -8,7 +8,7 @@ private:
 public:
 	Dog();
 	~Dog();
-	Dog(string type);
+	Dog(string _type);
 	Dog(const Dog &src);
 	Dog &operator=(const Dog &src);
 	void makeSound() const;

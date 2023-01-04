@@ -9,7 +9,6 @@ class Brain
 {
 private:
 	string ideas[100];
-
 public:
 
 	Brain();

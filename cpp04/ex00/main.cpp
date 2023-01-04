@@ -4,10 +4,11 @@
 
 
 int main() {
-
     Animal *a = new Cat();
-    Animal *b = new Dog;
-    Animal *c = new Animal;
+    Animal *b = new Dog();
+    Animal *c = new Animal();
+
+
 
     WrongAnimal *w_a = new WrongCat();
     WrongAnimal *w_c = new WrongAnimal();
@@ -16,7 +17,7 @@ int main() {
     b->makeSound();
     c->makeSound();
 
-    std::cout << "---Wrong---\n";
+    std::cout << "---Wrong---" << endl;
 
     w_a->makeSound();
     w_c->makeSound();

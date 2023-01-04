@@ -14,10 +14,7 @@ public:
 	Cat(const Cat &src);
 	Cat(string _type);
 	Cat &operator=(const Cat &src);
-	void makeSound();
-	void setIdea(int index, string message);
-	string getIdea(int index);
-
+	void makeSound()const;
 };
 
 

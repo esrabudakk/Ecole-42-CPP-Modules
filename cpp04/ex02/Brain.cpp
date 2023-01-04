@@ -3,26 +3,28 @@
 
 Brain::Brain()
 {
-	cout << "Brain default constructor called" << endl;
+    cout << "Brain default constructor called" << endl;
 }
 
 Brain::~Brain()
 {
-	cout << "Brain destructor called" << endl;
+    cout << "Brain destructor called" << endl;
 }
 
 Brain::Brain(const Brain& src)
 {
-	cout << "Brain copy constructor called" << endl;
-	*this = src;
+    cout << "Brain copy constructor called" << endl;
+    for (unsigned  long int i = 0; i <100 ; ++i) {
+        this->ideas[i] = src.ideas[i];
+    }
 }
 
 Brain &Brain::operator=(const Brain &src)
 {
-	cout << "Brain copy assignment  called" << endl;
-    for (unsigned  long int i = 0; i <src.ideas->length() ; ++i) {
+    cout << "Brain copy assignment  called" << endl;
+    for (unsigned  long int i = 0; i <100 ; ++i) {
         this->ideas[i] = src.ideas[i];
     }
-	return *this;
+    return *this;
 }
 

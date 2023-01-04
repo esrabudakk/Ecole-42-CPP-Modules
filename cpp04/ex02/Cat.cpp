@@ -1,46 +1,40 @@
 #include "Cat.hpp"
-Cat::Cat(): Animal("Cat")
+Cat::Cat()
 {
-	cout << "Cat default constructor called "<< endl;
-	this->brain = new Brain();
+    cout << "Cat default constructor called " << endl;
+    this->type = "Cat";
+    this->brain = new Brain();
 }
 
 Cat::~Cat()
 {
-	cout << "Cat destructor called "<< endl;
-	delete this->brain;
+    delete this->brain;
+    cout << "Cat destructor called " << endl;
 }
 
-Cat::Cat(string _type): Animal(_type)
+Cat::Cat(string _type)
 {
-	 std::cout << "Cat (\"" << type << "\") constructor called" << std::endl;
-	 this->brain = new Brain();
-}
-Cat::Cat(const Cat& src): Animal(src)
-{
-	cout << "Cat copy constructor called "<< endl;
-    this->brain = src.brain;
-	*this = src;
+    this->type = _type;
+    this->brain = new Brain();
+    cout << "Cat " << this->type << " constructor called" << endl;
 }
 
-Cat &Cat::operator=(const Cat& src)
+Cat::Cat(const Cat &src)
 {
-	cout << "Cat copy assignment called "<< endl;
-	this->type = src.type;
-	return *this;
+    cout << "Cat copy constructor called " << endl;
+    this->type = src.type;
+    this->brain = new Brain(*src.brain);
 }
 
-void Cat::makeSound()
+Cat &Cat::operator=(const Cat &src)
 {
-	cout << "Cat is meowing" << endl; 
+    cout << "Cat copy assignment called " << endl;
+    this->type = src.type;
+    this->brain = new Brain(*src.brain);
+    return *this;
 }
 
-void Cat::setIdea(int index, string message)
+void Cat::makeSound() const
 {
-    this->brain->ideas[index] = message;
-}
-
-string Cat::getIdea(int index)
-{
-	return this->brain->ideas[index];
+    cout << "Cat is meowing" << endl;
 }

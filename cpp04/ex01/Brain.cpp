@@ -14,13 +14,15 @@ Brain::~Brain()
 Brain::Brain(const Brain& src)
 {
 	cout << "Brain copy constructor called" << endl;
-	*this = src;
+    for (size_t i = 0; i <100; ++i) {
+        this->ideas[i] = src.ideas[i];
+    }
 }
 
 Brain &Brain::operator=(const Brain &src)
 {
 	cout << "Brain copy assignment  called" << endl;
-    for (unsigned  long int i = 0; i <src.ideas->length() ; ++i) {
+    for (size_t i = 0; i <100; ++i) {
         this->ideas[i] = src.ideas[i];
     }
 	return *this;
