@@ -111,4 +111,4 @@ add_executable(Ecole_42_CPP_Modules
         cpp04/ex01/Dog.hpp
         cpp04/ex01/main.cpp
         deneme/deneme.cpp
-        deneme/deneme2.cpp)
+        deneme/deneme2.cpp cpp05/ex00/main.cpp cpp05/ex00/Bureaucrat.cpp cpp05/ex00/Bureaucrat.hpp cpp05/ex01/Form.cpp cpp05/ex01/Form.hpp)
