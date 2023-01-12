@@ -12,20 +12,26 @@ using std::cout;
 using std::endl;
 using std::string;
 
-class Form : public Bureaucrat{
+class Bureaucrat;
+
+class Form{
 private:
-    string name;
+    string const name;
+    int const gradeToExec;
+    int const gradeToSign;
     bool sign;
-    int gradeToSign;
-    int gradeToExec;
 public:
     Form();
     ~Form();
     Form(const Form &src);
+    Form(const string _name, const int _gradeToSign, const int _gradeToExec);
     Form &operator=(const Form &src);
+    string getName() const;
     int getGradeToSign() const;
     int getGradeToExec() const;
-    void beSigned(Bureaucrat bureaucrat);
+    bool getSign() const;
+    void beSigned(Bureaucrat &bureaucrat);
+
     class GradeTooHighException : public std::exception {
         const char *what() const throw() {
             return "Grade too high";
@@ -37,6 +43,7 @@ public:
         }
     };
 };
-    std::ostream &operator<<(std::ostream &out, const Form &value);
+
+std::ostream &operator<<(std::ostream &out, const Form &value);
 
 #endif //ECOLE_42_CPP_MODULES_FORM_HPP

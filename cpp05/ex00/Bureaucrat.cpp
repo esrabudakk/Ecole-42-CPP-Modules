@@ -9,8 +9,8 @@ Bureaucrat::Bureaucrat():name("Bureaucrat"), grade(150){
 Bureaucrat::~Bureaucrat(){
     cout << "Bureaucrat destructor called "<< endl;
 }
-Bureaucrat::Bureaucrat(const string _name, int _grade){
-    this->name=_name;
+Bureaucrat::Bureaucrat( string const _name, int _grade):name(_name){
+    cout << "Bureaucrat parameter constructor called" << endl;
     if(_grade>150)
         throw Bureaucrat::GradeTooLowException();
     else if(_grade < 1)
@@ -18,16 +18,14 @@ Bureaucrat::Bureaucrat(const string _name, int _grade){
     else
         this->grade = _grade;
 }
-Bureaucrat::Bureaucrat(const Bureaucrat &src){
-    this->name = src.name;
-    this->grade = src.grade;
+Bureaucrat::Bureaucrat(const Bureaucrat &src):name(src.name){
+   this->grade = src.grade;
 }
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src){
-    this->name = src.name;
+    const_cast<string &>(this->name) = src.name;
     this->grade = src.grade;
     return *this;
 }
-
 
 string Bureaucrat::getName() const {
     return this->name;
@@ -37,16 +35,16 @@ int Bureaucrat::getGrade() const {
     return this->grade;
 }
 void Bureaucrat::incrementGrade(){
-    if(this->grade < 1)
+    if(this->grade <= 1)
         throw Bureaucrat::GradeTooHighException();
     else
-       this->grade++;
+       this->grade--;
 }
 void Bureaucrat::decrementGrade(){
-    if(this->grade < 1)
-        throw Bureaucrat::GradeTooHighException();
+    if(this->grade >= 150)
+        throw Bureaucrat::GradeTooLowException();
     else
-        this->grade--;
+        this->grade++;
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &value)

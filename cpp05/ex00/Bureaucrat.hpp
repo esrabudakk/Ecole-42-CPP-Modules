@@ -14,7 +14,7 @@ using std::string;
 class Bureaucrat {
 
 private:
-    string name;
+     string const name;
     int grade;
 public:
     Bureaucrat();
