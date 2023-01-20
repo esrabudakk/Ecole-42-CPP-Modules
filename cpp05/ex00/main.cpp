@@ -6,11 +6,10 @@
 
 int main()
 {
-    Bureaucrat john("John", 2);
-    Bureaucrat jim("Jim", 149);
-
     try
     {
+        Bureaucrat john("John", 2);
+        Bureaucrat jim("Jim", 149);
         std::cout << john << std::endl;
         std::cout << jim << std::endl;
         john.incrementGrade();
@@ -24,6 +23,6 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << std::endl;
+        std::cerr << e.what() << endl;
     }
 }

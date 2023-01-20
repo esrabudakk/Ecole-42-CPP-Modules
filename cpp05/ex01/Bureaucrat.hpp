@@ -17,7 +17,7 @@ class Form;
 class Bureaucrat {
 
 private:
-     string const name;
+    const string name;
     int grade;
 public:
     Bureaucrat();

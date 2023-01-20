@@ -2,23 +2,23 @@
 // Created by ebudak on 1/10/23.
 //
 
-#ifndef ECOLE_42_CPP_MODULES_BUREAUCRAT_HPP
-#define ECOLE_42_CPP_MODULES_BUREAUCRAT_HPP
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 using std::cout;
 using std::endl;
 using std::string;
 
-class Form;
+class AForm;
 
 class Bureaucrat {
 
 private:
-     string const name;
-    int grade;
+     const string  name;
+     int grade;
 public:
     Bureaucrat();
     ~Bureaucrat();
@@ -28,10 +28,12 @@ public:
 
     string getName()const;
     int getGrade()const;
+    void executeForm(AForm const &form);
 
     void incrementGrade();
     void decrementGrade();
-    void signForm(Form &form);
+    void signForm(AForm &form);
+
     class GradeTooHighException : public std::exception {
         const char *what() const throw() {
             return "Grade too high";
@@ -43,9 +45,7 @@ public:
         }
     };
 
-
 };
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &value);
 
-
-#endif //ECOLE_42_CPP_MODULES_BUREAUCRAT_HPP
+#endif

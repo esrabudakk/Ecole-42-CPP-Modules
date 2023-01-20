@@ -2,8 +2,8 @@
 // Created by ebudak on 1/11/23.
 //
 
-#ifndef ECOLE_42_CPP_MODULES_AForm_HPP
-#define ECOLE_42_CPP_MODULES_AForm_HPP
+#ifndef AForm_HPP
+#define AForm_HPP
 
 #include <iostream>
 #include <exception>
@@ -16,13 +16,13 @@ class Bureaucrat;
 
 class AForm{
 private:
-    string const name;
-    int const gradeToExec;
-    int const gradeToSign;
-    bool sign;
+     const string name;
+     const int  gradeToExec;
+     const  int  gradeToSign;
+     bool sign;
 public:
     AForm();
-    ~AForm();
+    virtual  ~AForm();
     AForm(const AForm &src);
     AForm(const string _name, const int _gradeToSign, const int _gradeToExec);
     AForm &operator=(const AForm &src);
@@ -31,7 +31,8 @@ public:
     int getGradeToExec() const;
     bool getSign() const;
     void beSigned(Bureaucrat &bureaucrat);
-    void execute(Bureaucrat const & executor) const;
+    virtual void execute(Bureaucrat const & executor) const = 0;
+    void  checkExecute(Bureaucrat const &bureaucrat) const;
 
     class GradeTooHighException : public std::exception {
         const char *what() const throw() {
@@ -41,6 +42,12 @@ public:
     class GradeTooLowException : public std::exception {
         const char *what() const throw() {
             return "Grade too low";
+        }
+    };
+    class NotSignedException : public std::exception {
+        const char *what() const throw() {
+            return "Form is not signed!";
+
         }
     };
 };

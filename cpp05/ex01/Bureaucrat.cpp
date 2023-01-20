@@ -20,9 +20,11 @@ Bureaucrat::Bureaucrat( string const _name, int _grade):name(_name){
         this->grade = _grade;
 }
 Bureaucrat::Bureaucrat(const Bureaucrat &src):name(src.name){
+    cout << "Bureaucrat copy constructor called" << endl;
    this->grade = src.grade;
 }
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src){
+    cout << "Bureaucrat assignment operator called"<< endl;
     const_cast<string &>(this->name) = src.name;
     this->grade = src.grade;
     return *this;
@@ -49,16 +51,14 @@ void Bureaucrat::decrementGrade(){
 }
 
 void Bureaucrat::signForm(Form &form) {
-
     try
     {
         form.beSigned(*this);
-        std::cout << *this << " signed " << form << std::endl;
+        cout << *this << " signed " << form << endl;
     }
     catch (std::exception &e)
     {
-        std::cout << *this << " couldn’t sign " << form << " because "
-                  << e.what() << std::endl;
+        cout << *this << " couldn’t sign " << form << " because " << e.what() << endl;
     }
 }
 

@@ -1,5 +1,6 @@
 NAME = bureaucrat
 SRC = main.cpp Bureaucrat.cpp
+INCS = Bureaucrat.hpp
 CC = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
@@ -7,7 +8,7 @@ OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
+$(NAME) : $(OBJ) $(INCS)
 		$(CC) $(CPPFLAGS) $(SRC) -o $(NAME)
 
 clean : 

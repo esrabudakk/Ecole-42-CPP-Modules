@@ -2,8 +2,8 @@
 // Created by ebudak on 1/11/23.
 //
 
-#ifndef ECOLE_42_CPP_MODULES_FORM_HPP
-#define ECOLE_42_CPP_MODULES_FORM_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <iostream>
 #include <exception>

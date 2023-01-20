@@ -4,7 +4,6 @@
 
 #include "Bureaucrat.hpp"
 Bureaucrat::Bureaucrat():name("Bureaucrat"), grade(150){
-    Form form;
     cout << "Bureaucrat default constructor called";
 }
 Bureaucrat::~Bureaucrat(){
@@ -48,7 +47,7 @@ void Bureaucrat::decrementGrade(){
         this->grade++;
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form){
 
     try
     {
@@ -61,7 +60,10 @@ void Bureaucrat::signForm(Form &form) {
                   << e.what() << std::endl;
     }
 }
-
+void Bureaucrat::executeForm(AForm const &form)
+{
+    form.execute(*this);
+}
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &value)
 {
     out << value.getName() << ", bureaucrat grade " << value.getGrade();

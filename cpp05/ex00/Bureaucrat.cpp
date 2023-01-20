@@ -19,8 +19,10 @@ Bureaucrat::Bureaucrat( string const _name, int _grade):name(_name){
         this->grade = _grade;
 }
 Bureaucrat::Bureaucrat(const Bureaucrat &src):name(src.name){
+    cout << "Bureaucrat copy constructor called"<< endl;
    this->grade = src.grade;
 }
+
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src){
     const_cast<string &>(this->name) = src.name;
     this->grade = src.grade;
