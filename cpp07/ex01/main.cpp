@@ -12,5 +12,6 @@ int	main( void )
     int int_arr[] = {1, 2, 3, 4, 5, 6, 7};
     iter(str_arr, 2, &f);
     iter(int_arr, 7, &f);
-	return 0;
+
+    return 0;
 }
