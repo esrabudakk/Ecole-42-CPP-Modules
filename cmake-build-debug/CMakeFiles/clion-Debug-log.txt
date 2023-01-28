@@ -1,13 +1,1 @@
-/private/var/folders/zz/zyxvpxvq6csfxvn_n000cb_m0032tn/T/AppTranslocation/BA6B456D-45D5-45C4-97A3-8ED066401865/d/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/ebudak/Desktop/Ecole-42-CPP-Modules -B /Users/ebudak/Desktop/Ecole-42-CPP-Modules/cmake-build-debug
--- Configuring done
-CMake Error at CMakeLists.txt:23 (add_executable):
-  Cannot find source file:
-
-    deneme/deneme.cpp
-
-
-CMake Error at CMakeLists.txt:23 (add_executable):
-  No SOURCES given to target: Ecole_42_CPP_Modules
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+CMakeLists.txt not found in /Users/ebudak/Desktop/Ecole-42-CPP-Modules Select CMakeLists.txt
