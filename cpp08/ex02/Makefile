@@ -2,7 +2,7 @@ NAME		=	stack
 
 SRCS		=	main.cpp
 
-INCS		=	MutantStack.h
+INCS		=	MutantStack.hpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 

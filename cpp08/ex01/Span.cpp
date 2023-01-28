@@ -1,63 +1,65 @@
-#include "Span.h"
+#include "Span.hpp"
 
-Span::Span() {}
+Span::Span(){}
 
-Span::Span(const Span &obj) {
-    this->_numbers = obj._numbers;
-    this->_size = obj._size;
+Span::~Span(){}
+
+Span::Span(unsigned int _n) {
+    this->n = _n;
 }
 
-Span::Span(unsigned int a_size) {
-    this->_size = a_size;
+Span::Span(const Span &src){
+    this->n = src.n;
+    this->vect = src.vect;
 }
 
-Span &Span::operator=(const Span &obj) {
-    if (this == &obj)
-        return *this;
-    this->_numbers = obj._numbers;
-    this->_size = obj._size;
+Span &Span::operator=(const Span &src){
+    this->n = src.n;
+    this->vect = src.vect;
     return *this;
 }
 
-Span::~Span() {}
-
-void Span::addNumber(int a_numb) {
-    if (this->_numbers.size() < this->_size)
-        this->_numbers.push_back(a_numb);
+int Span::longestSpan(){
+    if(this->vect.size() < 2)
+        throw NoEnoughNumber();
     else
-        throw Span::ThereIsNoEnoughSize();
-};
+    {
+        std::sort(this->vect.begin(), this->vect.end());
+        int longSpan = *(this->vect.end() - 1) - *(this->vect.begin());
+        return longSpan;
+    }
 
-void Span::addNumber(const std::vector<int>::iterator &begin, const std::vector<int>::iterator &end) {
-    int distance = std::distance(begin, end);
-    if (distance + this->_numbers.size() > this->_size) {
-        this->_numbers.insert(this->_numbers.end(), begin, begin + (this->_size - this->_numbers.size()));
-        throw Span::ThereIsNoEnoughSize();
-    } else {
-        this->_numbers.insert(this->_numbers.end(), begin, end);
+}
+
+int Span::shortestSpan(){
+    if(this->vect.size() < 2)
+        throw  NoEnoughNumber();
+    else
+    {
+        std::sort(this->vect.begin(), this->vect.end());
+        std::vector<int>::iterator ptr;
+        int shortSpan = *(this->vect.end() - 1) - *(this->vect.begin());
+        for (ptr = (this->vect.end() - 1); ptr > this->vect.begin() ; ptr--) {
+            if(shortSpan > *ptr - *(ptr - 1))
+                shortSpan = *ptr - *(ptr - 1);
+        }
+        return shortSpan;
     }
 }
 
-int Span::shortestSpan() const {
-    if (this->_numbers.size() <= 1)
-        throw Span::ThereIsNoEnoughNumber();
-    std::vector<int> tmp;
-    int ret = INT_MAX;
-    tmp = this->_numbers;
-    sort(tmp.begin(), tmp.end());
-    for (long unsigned int i = 1; i < tmp.size(); i++)
-        ret = std::min(ret, tmp[i] - tmp[i - 1]);
-    return ret;
+void Span::addNumber(int number) {
+    if(this->vect.size() == this->n)
+        throw NoEnoughSize();
+    else
+        this->vect.push_back(number);
 }
 
-int Span::longestSpan() const {
-    if (this->_numbers.size() <= 1)
-        throw Span::ThereIsNoEnoughNumber();
-    std::vector<int> tmp;
-    tmp = this->_numbers;
-    int ret = INT_MIN;
-
-    sort(tmp.begin(), tmp.end());
-    ret = std::max(ret, tmp[tmp.size() - 1] - tmp[0]);
-    return ret;
+void    Span::addNumber(const std::vector<int>::iterator &begin, const std::vector<int>::iterator &end) {
+    int distance = std::distance(begin, end);
+    if (distance + this->vect.size() > this->n){
+        this->vect.insert(this->vect.end(), begin, begin + (this->n - this->vect.size()));
+        throw NoEnoughSize();
+    }
+    else
+        this->vect.insert(this->vect.end(), begin, end);
 }

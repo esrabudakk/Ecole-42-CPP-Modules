@@ -1,7 +1,10 @@
+
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
+
 #include "iostream"
 #include "exception"
 #include "vector"
-#include "algorithm"
 
 class OutofRange : public std::exception
 {
@@ -22,3 +25,5 @@ typename T::iterator easyfind(T &a_vector, int toFind)
     else
         throw OutofRange();
 };
+
+#endif

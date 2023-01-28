@@ -1,6 +1,4 @@
-#include "iostream"
-#include "vector"
-#include "easyfind.h"
+#include "easyfind.hpp"
 
 void print(int i)
 {
@@ -13,10 +11,9 @@ int main()
 
     for (int i = 0; i <= 42; i++)
         vInt.push_back(i);
-
     try
     {
-        std::vector<int>::iterator it_collect = easyfind(vInt, 14);
+        std::vector<int>::iterator it_collect = easyfind(vInt, 21);
         (void)it_collect;
         for_each(it_collect, vInt.end(), print);
         std::cout << std::endl;
@@ -25,8 +22,4 @@ int main()
     {
         std::cerr << e.what() << std::endl;
     }
-
-    /*     for (int i = 0; i < vInt.size(); i++)
-            std::cout << vInt[i] << " ";
-     */
 }

@@ -2,7 +2,7 @@ NAME		=	iter
 
 SRCS		=	main.cpp
 
-INCS		=	easyfind.h
+INCS		=	easyfind.hpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 

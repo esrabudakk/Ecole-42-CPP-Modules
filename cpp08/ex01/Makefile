@@ -2,7 +2,7 @@ NAME		=	span
 
 SRCS		=	main.cpp Span.cpp
 
-INCS		=	Span.h
+INCS		=	Span.hpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
